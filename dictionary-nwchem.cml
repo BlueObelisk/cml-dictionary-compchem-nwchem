@@ -1,6 +1,7 @@
 <cml xmlns="http://www.xml-cml.org/schema">
     <!-- first try at NWChem dictionary -->
     <dictionary xmlns:h="http://www.w3.org/1999/xhtml"
+                xmlns:m="http://www.w3.org/1998/Math/MathML"
                 namespace="http://www.xml-cml.org/dictionary/compchem/nwchem/"
                 xmlns:convention="http://www.xml-cml.org/convention/" 
                 convention="convention:dictionary"
@@ -1642,13 +1643,71 @@
             </description>
         </entry>
 
-        <entry id="effnucrep" term="TODO" dataType="xsd:string" units="si:none"
-               unitType="unitType:none">
+        <entry id="effnucrep" term="effective nuclear repulsion energy" dataType="xsd:float" units="nonSi:hartree"
+               unitType="unitType:energy">
             <definition>
-                <h:p>TODO</h:p>
+                <h:p>The potential energy arising from Coulombic nuclei-nuclei repulsions.</h:p>
+                <h:p>
+                <m:math>
+                    <m:mrow>
+
+                        <m:msub>
+                            <m:mover>
+                                <m:mi>T</m:mi>
+                                <!-- <m:mo>&Hat;-->
+                                <m:mo>&#94;
+                                </m:mo>
+                            </m:mover>
+                            <m:mi>n</m:mi>
+                        </m:msub>
+
+                        <m:mo>=</m:mo>
+
+                        <m:mo>-</m:mo>
+                        <m:munder>
+<!--                            <m:mo>&Sum;-->
+                            <m:mo>&#8721;
+                            </m:mo>
+                            <m:mi>i</m:mi>
+                        </m:munder>
+
+                        <m:mfrac>
+                            <m:mrow>
+                                <m:msup>
+<!--                                    <m:mo>&hbar; -->
+                                    <m:mo>&#8463;
+                                    </m:mo>
+                                    <m:mn>2</m:mn>
+                                </m:msup>
+                            </m:mrow>
+
+                            <m:mrow>
+                                <m:mn>2</m:mn>
+                                <m:msub>
+                                    <m:mi>M</m:mi>
+                                    <m:mi>i</m:mi>
+                                </m:msub>
+                            </m:mrow>
+                        </m:mfrac>
+
+                        <m:msubsup>
+<!--                            <m:mi>&nabla;-->
+                            <m:mi>&#8711;
+                            </m:mi>
+                            <m:msub>
+                                <m:mi>R</m:mi>
+                                <m:mi>i</m:mi>
+                            </m:msub>
+                            <m:mn>2</m:mn>
+                        </m:msubsup>
+
+                    </m:mrow>
+                </m:math>
+                </h:p>
             </definition>
             <description>
-                <h:p>TODO</h:p>
+                <h:p>The nuclear repulsion energy is the sum of the repulsive Coulombic interaction energies between the positively charged nuclei.</h:p>
+                <h:a href="https://bitbucket.org/wwmm/jumbo-converters/src/5bee7e407c43/jumbo-converters-compchem/jumbo-converters-compchem-nwchem/src/main/resources/org/xmlcml/cml/converters/compchem/nwchem/log/templates/effnucrep.xml">jumbo template</h:a>
             </description>
         </entry>
 
